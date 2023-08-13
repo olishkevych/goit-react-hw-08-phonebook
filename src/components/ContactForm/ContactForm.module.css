@@ -1,0 +1,26 @@
+.form {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+.input {
+  max-width: 300px;
+}
+
+.formItem {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.addButton {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wrapper {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}

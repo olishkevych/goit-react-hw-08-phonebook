@@ -1,0 +1,33 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c2cedaa2;
+}
+
+.form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 30px 30px;
+}
+
+.buttonWrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cancelBtn {
+  background-color: #cad7e454;
+}
+
+.cancelBtn:hover {
+  background-color: #cad7e491;
+}

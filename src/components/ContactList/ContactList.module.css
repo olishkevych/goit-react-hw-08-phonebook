@@ -1,0 +1,74 @@
+ul {
+  list-style: none;
+  height: 100%;
+  margin: 10px 0 0 0;
+  padding-left: 0;
+  padding-bottom: 30px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  background-color: #ffffff;
+  color: #666666;
+  font-family: BlinkMacSystemFont, 'Segoe UI';
+  font-size: 14px;
+  padding: 6px 24px;
+  text-decoration: none;
+  margin-bottom: 3px;
+}
+
+.warning {
+  margin-top: 40px;
+  text-align: center;
+  font-style: italic;
+}
+
+.name {
+  font-weight: 600;
+  width: 100px;
+}
+
+.buttonWrap {
+  display: flex;
+}
+
+.removeBtn:hover {
+  background-color: #c7dbf0fa;
+}
+
+.phone {
+  text-decoration: none;
+  color: black;
+  width: 100px;
+}
+
+.sortWrap {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  text-align: center;
+  width: 500px;
+}
+
+.sortBtn {
+  background-color: #aebbc98e;
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.activeBtn {
+  background-color: rgba(22, 119, 255, 0.5);
+}
