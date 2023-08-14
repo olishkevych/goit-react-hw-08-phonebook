@@ -1,12 +1,12 @@
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Suspense, lazy, useEffect } from 'react';
 import styles from './App.module.css';
-import styled from 'styled-components';
 
 import { Loader } from './Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectIsLoading,
+  selectIsRefreshing,
   selectLoggedIn,
   selectToken,
   selectUserLoading,
@@ -14,19 +14,12 @@ import {
 import { refreshUserThunk } from 'redux/operations';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UserMenu from './UserMenu/UserMenu';
+import { StyledNavLink } from './StyledNavLink/StyledNavLink';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
-
-const StyledNavLink = styled(NavLink)`
-  color: #e7eaf6;
-
-  &.active {
-    color: #8ecdeb;
-  }
-`;
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -34,13 +27,16 @@ export const App = () => {
   const token = useSelector(selectToken);
   const isLoading = useSelector(selectIsLoading);
   const isUserLoading = useSelector(selectUserLoading);
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     if (!token || loggedIn) return;
     dispatch(refreshUserThunk());
   }, [dispatch, token, loggedIn]);
 
-  return (
+  return isRefreshing ? (
+    <></>
+  ) : (
     <div className={styles.wrapper}>
       <header>
         <nav className={styles.navbar}>
@@ -84,6 +80,7 @@ export const App = () => {
             />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>
       </main>
