@@ -14,7 +14,7 @@ import {
 import { refreshUserThunk } from 'redux/operations';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UserMenu from './UserMenu/UserMenu';
-import { StyledNavLink } from './StyledNavLink/StyledNavLink';
+import StyledNavLink from './StyledNavLink/StyledNavLink';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
