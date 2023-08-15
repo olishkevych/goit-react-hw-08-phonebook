@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, NavLink } from 'react-router-dom';
 import { Suspense, lazy, useEffect } from 'react';
 import styles from './App.module.css';
 
@@ -14,12 +14,19 @@ import {
 import { refreshUserThunk } from 'redux/operations';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UserMenu from './UserMenu/UserMenu';
-import StyledNavLink from './StyledNavLink/StyledNavLink';
+import { styled } from 'styled-components';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
+
+const StyledNavLink = styled(NavLink)`
+  color: #e7eaf6;
+  &.active {
+    color: #8ecdeb;
+  }
+`;
 
 export const App = () => {
   const dispatch = useDispatch();
