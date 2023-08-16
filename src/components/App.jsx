@@ -8,7 +8,6 @@ import {
   selectIsLoading,
   selectIsRefreshing,
   selectLoggedIn,
-  selectToken,
   selectUserLoading,
 } from 'redux/selectors';
 import { refreshUserThunk } from 'redux/operations';
