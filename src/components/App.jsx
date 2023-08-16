@@ -31,18 +31,16 @@ const StyledNavLink = styled(NavLink)`
 export const App = () => {
   const dispatch = useDispatch();
   const loggedIn = useSelector(selectLoggedIn);
-  const token = useSelector(selectToken);
   const isLoading = useSelector(selectIsLoading);
   const isUserLoading = useSelector(selectUserLoading);
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    if (!token || loggedIn) return;
     dispatch(refreshUserThunk());
-  }, [dispatch, token, loggedIn]);
+  }, [dispatch]);
 
   return isRefreshing ? (
-    <></>
+    <>Loading</>
   ) : (
     <div className={styles.wrapper}>
       <header>

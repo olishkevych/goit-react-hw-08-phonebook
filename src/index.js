@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <PersistGate loading={<p>loading...</p>} persistor={persistor}>
       <BrowserRouter basename="/goit-react-hw-08-phonebook">
         <App />
-        {/* <ToastContainer
+        <ToastContainer
           position="top-right"
           autoClose={3000}
           hideProgressBar={false}
@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           draggable
           pauseOnHover
           theme="dark"
-        /> */}
+        />
       </BrowserRouter>
     </PersistGate>
   </Provider>
