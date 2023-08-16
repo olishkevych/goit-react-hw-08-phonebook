@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  gap: 20px;
+}
+
+.account {
+  color: white;
+}

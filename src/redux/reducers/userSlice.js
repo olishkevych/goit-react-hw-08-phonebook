@@ -11,6 +11,7 @@ const userSlice = createSlice({
   initialState: {
     userData: null,
     loggedIn: false,
+    isRefreshing: true,
     token: null,
     isLoading: false,
     error: null,
@@ -25,7 +26,11 @@ const userSlice = createSlice({
       .addCase(registerUserThunk.rejected, handleRejected)
       .addCase(loginUserThunk.rejected, handleRejected)
       .addCase(logoutUserThunk.rejected, handleRejected)
-      .addCase(refreshUserThunk.rejected, handleRejected)
+      .addCase(refreshUserThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+        state.isRefreshing = false;
+      })
       .addCase(registerUserThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -45,6 +50,7 @@ const userSlice = createSlice({
         state.error = null;
         state.loggedIn = true;
         state.userData = action.payload;
+        state.isRefreshing = false;
       })
       .addCase(logoutUserThunk.fulfilled, (state, action) => {
         state.isLoading = false;

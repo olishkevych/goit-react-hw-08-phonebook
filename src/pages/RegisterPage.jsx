@@ -29,7 +29,7 @@ const RegisterPage = () => {
   if (loggedIn) return <Navigate to="/contacts" />;
 
   return (
-    <div classname={styles.formWrapper}>
+    <div className={styles.formWrapper}>
       <Form
         onFinish={handleRegister}
         name="basic"

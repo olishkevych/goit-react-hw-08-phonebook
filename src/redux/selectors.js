@@ -8,3 +8,4 @@ export const selectToken = state => state.user.token;
 export const selectLoginError = state => state.user.error;
 export const selectUserEmail = state => state.user.userData.email;
 export const selectUserLoading = state => state.user.isLoading;
+export const selectIsRefreshing = state => state.user.isRefreshing;
